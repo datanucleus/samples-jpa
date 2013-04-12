@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="lib" path="lib/jdo-api.jar"/>
-	<classpathentry kind="lib" path="lib/persistence-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/local.repository/javax.jdo/jars/jdo-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/local.repository/org.apache.geronimo.specs/jars/geronimo-jpa_2.0_spec-1.1.jar" sourcepath="/usr/local/maven2-repository/org/apache/geronimo/specs/geronimo-jpa_2.0_spec/1.1/geronimo-jpa_2.0_spec-1.1-sources.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
