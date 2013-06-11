@@ -5,7 +5,7 @@
     <groupId>org.datanucleus.samples</groupId>
     <artifactId>datanucleus-samples-jpa-tutorial</artifactId>
     <packaging>jar</packaging>
-    <version>3.2</version>
+    <version>3.3</version>
     <name>DataNucleus Tutorial for JPA</name>
     <url>http://www.datanucleus.org</url>
 
@@ -39,12 +39,12 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>(3.1.99, )</version>
+            <version>(3.2.99, )</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-jpa_2.0_spec</artifactId>
-            <version>1.1</version>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.1.0</version>
         </dependency>
         <dependency>
             <groupId>javax.jdo</groupId>
@@ -233,7 +233,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>3.2.0-release</version>
+                <version>3.3.0-m1</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>Tutorial</persistenceUnitName>
