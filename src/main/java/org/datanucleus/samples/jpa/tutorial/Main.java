@@ -92,6 +92,10 @@ public class Main
             tx.begin();
 
             // Do a find() of the Inventory
+            // Set the EntityGraph as something pulling in all Products
+            // Note : you could achieve the same by either
+            // 1). access the Inventory.products field before commit
+            // 2). set fetch=EAGER for the Inventory.products field
             System.out.println("Executing find() on Inventory");
             EntityGraph allGraph = em.getEntityGraph("allProps");
             Map hints = new HashMap();
@@ -99,15 +103,6 @@ public class Main
             inv = em.find(Inventory.class, "My Inventory", hints);
             System.out.println("Retrieved Inventory as " + inv);
 
-            // Access the fields/objects you want to be detached
-            // since JPA allows no EntityGraph for the detachment process
-            // Note : you could have set EAGER fetch on Inventory.products
-            // and achieve the same
-            Set<Product> products = inv.getProducts();
-            for (Product prod : products)
-            {
-                System.out.println("   Inventory.product = " + prod);
-            }
             tx.commit();
         }
         catch (Exception e)
