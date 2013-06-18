@@ -20,6 +20,7 @@ package org.datanucleus.samples.jpa.tutorial;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.HashMap;
 
 import javax.persistence.EntityManager;
@@ -79,6 +80,7 @@ public class Main
             }
             em.close();
         }
+        emf.getCache().evictAll();
         System.out.println("");
 
         // Perform a retrieve of the Inventory and detach it (by closing the EM)
@@ -88,6 +90,8 @@ public class Main
         try
         {
             tx.begin();
+
+            // Do a find() of the Inventory
             System.out.println("Executing find() on Inventory");
             EntityGraph allGraph = em.getEntityGraph("allProps");
             Map hints = new HashMap();
@@ -95,10 +99,15 @@ public class Main
             inv = em.find(Inventory.class, "My Inventory", hints);
             System.out.println("Retrieved Inventory as " + inv);
 
-            // Access Products field so it is loaded before detach
-            // Note that you could alternately make it EAGER fetch, or use Entity Graphs
-//          inv.getProducts();
-
+            // Access the fields/objects you want to be detached
+            // since JPA allows no EntityGraph for the detachment process
+            // Note : you could have set EAGER fetch on Inventory.products
+            // and achieve the same
+            Set<Product> products = inv.getProducts();
+            for (Product prod : products)
+            {
+                System.out.println("   Inventory.product = " + prod);
+            }
             tx.commit();
         }
         catch (Exception e)
