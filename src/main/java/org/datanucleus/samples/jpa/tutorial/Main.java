@@ -19,12 +19,17 @@ package org.datanucleus.samples.jpa.tutorial;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.EntityGraph;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+
+import org.datanucleus.util.NucleusLogger;
 
 /**
  * Controlling application for the DataNucleus Tutorial using JPA.
@@ -60,6 +65,12 @@ public class Main
             tx.commit();
             System.out.println("Product and Book have been persisted");
         }
+        catch (Exception e)
+        {
+            NucleusLogger.GENERAL.error(">> Exception persisting data", e);
+            System.err.println("Error persisting data : " + e.getMessage());
+            return;
+        }
         finally
         {
             if (tx.isActive())
@@ -78,14 +89,23 @@ public class Main
         {
             tx.begin();
             System.out.println("Executing find() on Inventory");
-            inv = em.find(Inventory.class, "My Inventory");
+            EntityGraph allGraph = em.getEntityGraph("allProps");
+            Map hints = new HashMap();
+            hints.put("javax.persistence.loadgraph", allGraph);
+            inv = em.find(Inventory.class, "My Inventory", hints);
             System.out.println("Retrieved Inventory as " + inv);
 
             // Access Products field so it is loaded before detach
-            // Note that you could alternately make it EAGER fetch, or use DN fetch groups
-            inv.getProducts();
+            // Note that you could alternately make it EAGER fetch, or use Entity Graphs
+//          inv.getProducts();
 
             tx.commit();
+        }
+        catch (Exception e)
+        {
+            NucleusLogger.GENERAL.error(">> Exception performing find() on data", e);
+            System.err.println("Error performing find() on data : " + e.getMessage());
+            return;
         }
         finally
         {
@@ -125,6 +145,12 @@ public class Main
             }
 
             tx.commit();
+        }
+        catch (Exception e)
+        {
+            NucleusLogger.GENERAL.error(">> Exception querying data", e);
+            System.err.println("Error querying data : " + e.getMessage());
+            return;
         }
         finally
         {
@@ -166,10 +192,12 @@ public class Main
 
             tx.commit();
         }
-		catch (Exception e)
-		{
-            System.out.println("Bulk delete encountered an error " + e.getMessage());
-	    }
+        catch (Exception e)
+        {
+            NucleusLogger.GENERAL.error(">> Exception in bulk delete of data", e);
+            System.err.println("Error in bulk delete of data : " + e.getMessage());
+            return;
+        }
         finally
         {
             if (tx.isActive())
