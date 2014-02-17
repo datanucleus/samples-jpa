@@ -38,7 +38,7 @@
             <!-- ENABLE THESE FOR NEO4J -->
             <!--property name="javax.persistence.jdbc.url" value="neo4j:testDB"/-->
 
-            <property name="datanucleus.autoCreateSchema" value="true"/>
+            <property name="datanucleus.schema.autoCreateAll" value="true"/>
         </properties>
     </persistence-unit>
 
