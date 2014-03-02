@@ -34,12 +34,12 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
@@ -73,7 +73,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>hsqldb</groupId>
@@ -85,7 +85,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -97,7 +97,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-odf</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.odftoolkit</groupId>
@@ -114,7 +114,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-excel</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -126,7 +126,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-mongodb</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.mongodb</groupId>
@@ -138,7 +138,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-hbase</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
@@ -175,7 +175,7 @@
         <!--dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-neo4j</artifactId>
-            <version>[4.0.0-m1-SNAPSHOT, )</version>
+            <version>[4.0.0-m1, )</version>
         </dependency>
         <dependency>
             <groupId>org.neo4j</groupId>
@@ -183,6 +183,17 @@
             <version>1.7.2</version>
         </dependency-->
 
+        <!-- ENABLE THIS FOR Cassandra -->
+        <!--dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-cassandra</artifactId>
+            <version>[4.0.0-m1, )</version>
+        </dependency>
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-core</artifactId>
+            <version>2.0.0-rc2</version>
+        </dependency-->
     </dependencies>
 
     <build>
@@ -233,7 +244,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>4.0.0-m1-SNAPSHOT</version>
+                <version>4.0.0-m1</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>Tutorial</persistenceUnitName>
