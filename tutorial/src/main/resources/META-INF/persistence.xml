@@ -23,6 +23,13 @@
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/-->
 
+            <!-- ENABLE THESE FOR MySQL -->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1/nucleus?useServerPrepStmts=false"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />   
+            <property name="javax.persistence.jdbc.user" value="root" />   
+            <property name="javax.persistence.jdbc.password" value="password" />  
+            <property name="javax.jpa.option.Mapping" value="mysql" />-->
+            
             <!-- ENABLE THESE FOR ODF -->
             <!--property name="javax.persistence.jdbc.url" value="odf:file:tutorial.ods"/-->
 
