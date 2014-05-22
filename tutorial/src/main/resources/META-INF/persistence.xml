@@ -43,7 +43,7 @@
             <!--property name="javax.persistence.jdbc.url" value="hbase:"/-->
 
             <!-- ENABLE THESE FOR NEO4J -->
-            <!--property name="javax.persistence.jdbc.url" value="neo4j:testDB"/-->
+            <!--property name="javax.persistence.jdbc.url" value="neo4j:path/to/graph.db"/-->
 
             <!-- ENABLE THESE FOR CASSANDRA -->
             <!--property name="javax.jdo.option.ConnectionURL" value="cassandra:"/>
