@@ -27,7 +27,7 @@
             <version>[4.0.0-m1, 4.9)</version>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
+            <groupId>org.datanucleus</groupId>
             <artifactId>javax.persistence</artifactId>
             <version>2.1.0</version>
         </dependency>
