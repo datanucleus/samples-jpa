@@ -39,9 +39,8 @@
             <!--property name="javax.persistence.jdbc.url" value="neo4j:testDB"/-->
 
             <!-- ENABLE THESE FOR CASSANDRA -->
-            <!--property name="javax.jdo.option.ConnectionURL" value="cassandra:"/>
-            <property name="javax.jdo.mapping.Schema" value="schema1"/>
-            <property name="javax.jdo.option.Mapping" value="cassandra"/-->
+            <!--property name="javax.persistence.jdbc.url" value="cassandra:"/>
+            <property name="datanucleus.mapping.Schema" value="schema1"/-->
 
             <property name="datanucleus.schema.autoCreateAll" value="true"/>
         </properties>
