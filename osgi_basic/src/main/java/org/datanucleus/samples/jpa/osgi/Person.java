@@ -25,7 +25,9 @@ import javax.persistence.Entity;
 @Entity
 public class Person implements Serializable
 {
- 	@Id
+    private static final long serialVersionUID = 3756735282867141477L;
+
+    @Id
     private long id;
     
  	@Basic
