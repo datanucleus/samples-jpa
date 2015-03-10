@@ -1,8 +1,7 @@
 jpql-function
 =============
 
-Sample showing how to add support for a Java Function to JPQL for RDBMS,
-and an evaluator for use when evaluating the query in-memory.
+Sample showing how to add support for a Java Function to JPQL for RDBMS.
 
 Look at
 
