@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DataNucleus JPQL Function Sample from MyDomain
+Bundle-SymbolicName: mydomain;singleton:=true
+Bundle-Version: 4.0
+Bundle-Localization: plugin
+Bundle-Vendor: MyDomain
+Require-Bundle: org.datanucleus,
+ org.datanucleus.store.rdbms
