@@ -24,7 +24,7 @@ Maven Instructions
 Ant instructions
 ================
 1. Create a directory **lib** and add the following jars to it : 
-   persistence-api.jar (e.g geronimo-specs geronimo_jpa_2.0_spec), datanucleus-core.jar, datanucleus-api-jpa.jar, datanucleus-{store}.jar, log4j.jar, {your-database-driver}.jar
+   javax.persistence-2.1.0.jar, datanucleus-core.jar, datanucleus-api-jpa.jar, datanucleus-{store}.jar, log4j.jar, {your-database-driver}.jar
 
 2. Run the command *ant clean compile enhance*. This builds everything and enhances the classes
 
