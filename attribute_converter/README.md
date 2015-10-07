@@ -1,13 +1,11 @@
 attribute_converter
 ===================
 
-Sample showing how to use an attribute converter to store a Boolean in
-different ways.
+Sample showing how to use an attribute converter to store a Boolean in different ways.
 
-Look at
-
-* <a href="https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/resources/META-INF/MANIFEST.MF">src/main/resources/META-INF/MANIFEST.MF</a>  The MAINFEST.MF file for the plugin jar, defining the plugin imports/exports.
-* <a href="https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/resources/plugin.xml">src/main/resources/plugin.xml</a>   The plugin.xml file for the plugin jar, defining what features are being provided by this plugin.
-
-Provides a very simple test of the use of this attribute converter.
+In this example we have a class [Person](https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/java/mydomain/model/Person.java) with 2 Boolean fields. 
+One is annotated to be persisted using [Boolean10Converter](https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/java/mydomain/model/Boolean10Converter.java)
+meaning that it will persist either NULL, or 0 or 1 depending on the boolean value.
+The other is annotated to be persisted using [BooleanYNConverter](https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/java/mydomain/model/BooleanYNConverter.java)
+meaning that it will persist either NULL, or "N" or "Y" depending on the boolean value.
 
