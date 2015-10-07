@@ -1,7 +1,7 @@
-attribute_converter
-===================
+JPA AttributeConverter
+======================
 
-Sample showing how to use an attribute converter to store a Boolean in different ways.
+Sample showing how to use a JPA AttributeConverter to store a Boolean in different ways.
 
 In this example we have a class [Person](https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/java/mydomain/model/Person.java) with 2 Boolean fields. 
 One is annotated to be persisted using [Boolean10Converter](https://github.com/datanucleus/samples-jpa/blob/master/attribute_converter/src/main/java/mydomain/model/Boolean10Converter.java)
