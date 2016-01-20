@@ -183,7 +183,7 @@ public class Main
             em.remove(inv);
 
             System.out.println("Deleting all products from persistence");
-            Query q = em.createQuery("SELECT FROM Product p");
+            Query q = em.createQuery("SELECT p FROM Product p");
             List<Product> products = q.getResultList();
             int numDeleted = 0;
             for (Product prod : products)
