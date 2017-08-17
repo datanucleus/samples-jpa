@@ -25,11 +25,13 @@ public class SimpleTest
             Person p1 = new Person(1, "First Person");
             p1.setMyBool1(Boolean.TRUE);
             p1.setMyBool2(Boolean.TRUE);
+            p1.setAddress(new SimpleAddress("Main Street", "Edinburgh"));
             em.persist(p1);
 
             Person p2 = new Person(2, "Second Person");
             p2.setMyBool1(Boolean.FALSE);
             p2.setMyBool2(Boolean.FALSE);
+            p2.setAddress(new SimpleAddress("Church Street", "Glasgow"));
             em.persist(p2);
 
             tx.commit();
@@ -55,11 +57,12 @@ public class SimpleTest
         {
             tx.begin();
 
-            Query q = em.createQuery("SELECT p.myBool1 FROM Person p");
+            Query q = em.createQuery("SELECT p.myBool1,p.address FROM Person p");
             List results = q.getResultList();
             for (Object result : results)
             {
-                NucleusLogger.GENERAL.info(">> result=" + result);
+                Object[] row = (Object[])result;
+                NucleusLogger.GENERAL.info(">> result 0=" + row[0] + " 1=" + row[1]);
             }
             tx.commit();
         }

@@ -7,6 +7,7 @@
     <persistence-unit name="MyTest">
         <!-- Add all of your model classes here -->
         <class>mydomain.model.Person</class>
+        <class>mydomain.model.SimpleAddressStringConverter</class>
         <exclude-unlisted-classes />
         <properties>
             <!-- Update these datastore details if different -->

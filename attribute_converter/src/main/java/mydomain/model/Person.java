@@ -18,6 +18,10 @@ public class Person
     @Convert(converter=BooleanYNConverter.class)
     Boolean myBool2;
 
+    @Basic
+//  @Convert(converter=SimpleAddressStringConverter.class)
+    SimpleAddress address;
+
     public Person(long id, String name)
     {
         this.id = id;
@@ -49,5 +53,14 @@ public class Person
     public Boolean getMyBool2()
     {
         return myBool2;
+    }
+
+    public void setAddress(SimpleAddress addr)
+    {
+        this.address = addr;
+    }
+    public SimpleAddress getSimpleAddress()
+    {
+        return this.address;
     }
 }
