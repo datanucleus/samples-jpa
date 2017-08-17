@@ -1,6 +1,7 @@
 package org.datanucleus.test;
 
 import org.junit.*;
+import java.util.*;
 import javax.persistence.*;
 
 import static org.junit.Assert.*;
@@ -31,6 +32,35 @@ public class SimpleTest
             p2.setMyBool2(Boolean.FALSE);
             em.persist(p2);
 
+            tx.commit();
+        }
+        catch (Throwable thr)
+        {
+            NucleusLogger.GENERAL.error(">> Exception in test", thr);
+            fail("Failed test : " + thr.getMessage());
+        }
+        finally 
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            em.close();
+        }
+        emf.getCache().evictAll();
+
+        em = emf.createEntityManager();
+        tx = em.getTransaction();
+        try
+        {
+            tx.begin();
+
+            Query q = em.createQuery("SELECT p.myBool1 FROM Person p");
+            List results = q.getResultList();
+            for (Object result : results)
+            {
+                NucleusLogger.GENERAL.info(">> result=" + result);
+            }
             tx.commit();
         }
         catch (Throwable thr)
