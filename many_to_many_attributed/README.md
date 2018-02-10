@@ -140,7 +140,7 @@ This arrangement will result in the following schema
 So all we need to do now is persist some objects using these classes
 
 ```
-EntityManagerFactory pmf = JDOHelper.getEntityManagerFactory("MyTest");
+EntityManagerFactory pmf = Persistence.createEntityManagerFactory("MyTest");
 EntityManager em = emf.createEntityManager();
 EntityTransaction tx = em.getTransaction();
 Object holderId = null;
