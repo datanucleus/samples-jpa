@@ -18,3 +18,10 @@ You can download this plugin from the DataNucleus downloads area.
 6. Run the command: "mvn datanucleus:schema-delete"
    This deletes the schema
 
+
+
+This sample contains 2 alternates.
+The basic attributed relation using derived identity is in package _org.datanucleus.samples.jpa.many_many_attributed_.
+A "best practice" alternate using a separate identity field in the intermediate class is in package _org.datanucleus.samples.jpa.many_many_attributed2_.
+
+The "best practice" removes the need for separate "id" classes, and would arguably operate more efficiently

@@ -5,7 +5,7 @@
     <groupId>org.datanucleus</groupId>
     <artifactId>datanucleus-samples-jpa-many_many_attributed</artifactId>
     <packaging>jar</packaging>
-    <version>4.0</version>
+    <version>5.0</version>
     <name>DataNucleus AccessPlatform JPA Many-to-Many Attributed Relation Sample</name>
     <url>http://www.datanucleus.org</url>
 
@@ -13,17 +13,17 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>[4.0.0-m4, )</version>
+            <version>[5.0.0-release, 5.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>[4.0.0-m4, )</version>
+            <version>[5.0.0-release, 5.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[4.0.0-m4, )</version>
+            <version>[5.0.0-release, 5.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
@@ -81,7 +81,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>4.0.0-release</version>
+                <version>5.0.2</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>MyTest</persistenceUnitName>
@@ -103,7 +103,8 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.1</version>
                 <configuration>
-                    <mainClass>org.datanucleus.samples.jpa.many_many_attributed.Main</mainClass>
+                    <mainClass>org.datanucleus.samples.jpa.many_many_attributed2.Main</mainClass>
+                    <!-- mainClass>org.datanucleus.samples.jpa.many_many_attributed.Main</mainClass-->
                     <systemProperties>
                         <systemProperty>
                             <key>log4j.configuration</key>

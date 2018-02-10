@@ -8,6 +8,10 @@
         <class>org.datanucleus.samples.jpa.many_many_attributed.Customer</class>
         <class>org.datanucleus.samples.jpa.many_many_attributed.Supplier</class>
         <class>org.datanucleus.samples.jpa.many_many_attributed.BusinessRelation</class>
+
+        <class>org.datanucleus.samples.jpa.many_many_attributed2.Customer2</class>
+        <class>org.datanucleus.samples.jpa.many_many_attributed2.Supplier2</class>
+        <class>org.datanucleus.samples.jpa.many_many_attributed2.BusinessRelation2</class>
         <exclude-unlisted-classes />
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:nucleus"/>
