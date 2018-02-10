@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.datanucleus</groupId>
     <version>5.0</version>
-    <artifactId>datanucleus-test-jpa</artifactId>
-    <name>DataNucleus Test for JPA</name>
-    <description>DataNucleus Test for JPA</description>
+    <artifactId>datanucleus-samples-jpa-attributeconverter</artifactId>
+    <name>DataNucleus Sample for JPA AttributeConverter usage</name>
+    <description>DataNucleus Sample for JPA AttributeConverter usage</description>
 
     <dependencies>
         <dependency>
