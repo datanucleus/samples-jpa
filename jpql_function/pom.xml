@@ -4,10 +4,10 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.datanucleus</groupId>
-    <version>4.0</version>
-    <artifactId>datanucleus-test-jpa</artifactId>
-    <name>DataNucleus Test for JPA</name>
-    <description>DataNucleus Test for JPA</description>
+    <version>5.0</version>
+    <artifactId>datanucleus-samples-jpa-jpql-function</artifactId>
+    <name>DataNucleus Sample for JPQL function support</name>
+    <description>DataNucleus Sample for JPQL function support</description>
 
     <dependencies>
         <dependency>
@@ -90,7 +90,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>4.0.0-release</version>
+                <version>5.0.2</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>MyTest</persistenceUnitName>

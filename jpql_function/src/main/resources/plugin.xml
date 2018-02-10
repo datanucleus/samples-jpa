@@ -2,8 +2,7 @@
 <plugin>
     <!-- SQL METHOD -->
     <extension point="org.datanucleus.store.rdbms.sql_method">
-        <sql-method method="LENGTHOFSTRING"
-            evaluator="mydomain.datanucleus.LengthOfStringMethod"/>
+        <sql-method method="LENGTHOFSTRING" evaluator="mydomain.datanucleus.LengthOfStringMethod"/>
     </extension>
 
     <!-- IN-MEMORY EVALUATOR -->
