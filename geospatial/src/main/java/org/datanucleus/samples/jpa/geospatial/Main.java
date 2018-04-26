@@ -54,7 +54,6 @@ public class Main
             Double distance = new Double(12.0);
             System.out.println("Retrieving Positions where distance to home is less than \"" + distance + "\" ... Found:");
 
-            // TODO Make this more elaborate, demonstrating more of the power of spatial method querying
             Query query = em.createQuery("SELECT p FROM Position p WHERE p.name <> 'home' AND Spatial.distance(p.point, :homepoint) < :distance");
             query.setParameter("homepoint", homepoint);
             query.setParameter("distance", distance);

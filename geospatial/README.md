@@ -37,16 +37,22 @@ You will use this schema to run the tutorial application.
 ## Step 2 : Download DataNucleus and PostGis libraries
 
 Download DataNucleus core, RDBMS and Geospatial jars and any dependencies. 
-Configure your development environment by adding the PostGIS and JDO jars to the classpath.
+Configure your development environment by adding the PostGIS and JPA jars to the classpath.
 
 
 ## Step 3 : Design and implement the persistent data model
 
 ```
-package org.datanucleus.samples.spatial;
+package org.datanucleus.samples.jpa.geospatial;
 
 import org.postgis.Point;
+import javax.persistence.*;
+import org.datanucleus.api.jpa.annotations.*;
 
+@Entity
+@Table(name="spatial_positions")
+@Extension(key="spatial-dimension", value="2")
+@Extension(key="spatial-srid", value="4326")
 public class Position
 {
     private String name;
@@ -76,22 +82,7 @@ public class Position
 }
 ```
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jdo SYSTEM "file:/javax/jdo/jdo.dtd">
-<jdo>
-	<package name="org.datanucleus.samples.jdo.spatial">
-		<extension vendor-name="datanucleus" key="spatial-dimension" value="2"/>
-		<extension vendor-name="datanucleus" key="spatial-srid" value="4326"/>
-		<class name="Position" table="spatialpostut" detachable="true">
-			<field name="name"/>
-			<field name="point" persistence-modifier="persistent"/>
-		</class>
-	</package>
-</jdo>
-```
-
-The above JDO metadata has two extensions _spatial-dimension_ and _spatial-srid_. 
+The above JPA metadata has two extensions _spatial-dimension_ and _spatial-srid_. 
 These settings specifies the format of the geospatial data. _SRID_ stands for spatial referencing system identifier and _Dimension_ the number of coordinates.
 
 
@@ -117,15 +108,15 @@ public class Main
 {
     public static void main(String args[]) throws SQLException
     {
-        // Create a PersistenceManagerFactory for this datastore
-        PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("MyUnit");
+        // Create an EntityManagerFactory for this datastore
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("MyTest");
+    
+        System.out.println("DataNucleus JPA Geospatial Sample");
+        System.out.println("=================================");
 
-        System.out.println("DataNucleus JDO Spatial Sample");
-        System.out.println("==============================");
-
-        // Persistence of a Product and a Book.
-        PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx=pm.currentTransaction();
+        // Persist several Position objects
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx=em.getTransaction();
         try
         {
             //create objects
@@ -146,8 +137,8 @@ public class Main
             System.out.println(sps[2]);
             System.out.println("");
 
-            pm.makePersistentAll(sps);
-            pm.makePersistent(home);
+            em.persist(sps);
+            em.persist(home);
 
             tx.commit();
             
@@ -155,16 +146,19 @@ public class Main
             tx.begin();
 
             Double distance = new Double(12.0);
-            System.out.println("Retriving position where distance to home is less than "+distance+" ... Found:");
-            
-            Query query = pm.newQuery(Position.class, "name != 'home' && Spatial.distance(this.point, :homepoint) < :distance");
-            List list = (List) query.execute(homepoint, distance);
-            for( int i=0; i<list.size(); i++)
+            System.out.println("Retrieving Positions where distance to home is less than \"" + distance + "\" ... Found:");
+
+            Query query = em.createQuery("SELECT p FROM Position p WHERE p.name <> 'home' AND Spatial.distance(p.point, :homepoint) < :distance");
+            query.setParameter("homepoint", homepoint);
+            query.setParameter("distance", distance);
+            List<Position> results = query.getResultList();
+            for (Position pos : results)
             {
-                System.out.println(list.get(i));
+                System.out.println(pos);
             }
-            //clean up database.. just for fun :)
-            pm.newQuery(Position.class).deletePersistentAll();
+
+            // clean up database
+            em.createQuery("DELETE FROM Position p").executeUpdate();
 
             tx.commit();
         }
@@ -178,6 +172,7 @@ public class Main
         }
 
         System.out.println("");
+        emf.close();
         System.out.println("End of Tutorial");
     }
 }
