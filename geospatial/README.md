@@ -11,7 +11,7 @@ This requires the DataNucleus Maven plugin. You can download this plugin from th
 * Run the command: "mvn datanucleus:schema-delete". This deletes the schema for this sample.
 
 
-# Guide : Persistence of Geospatial Data using JDO
+# Guide : Persistence of Geospatial Data using JPA
 
 
 _dataNucleus-geospatial_ allows the use of DataNucleus as persistence layer for geospatial applications in an environment that supports the OGC SFA specification. 
@@ -91,16 +91,12 @@ These settings specifies the format of the geospatial data. _SRID_ stands for sp
 In this tutorial, we query for all locations where the X coordinate is greater than 10 and Y coordinate is 0.
 
 ```
-package org.datanucleus.samples.spatial;
+package org.datanucleus.samples.jpa.geospatial;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
-import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Query;
-import javax.jdo.Transaction;
+import javax.persistence.*;
 
 import org.postgis.Point;
 
