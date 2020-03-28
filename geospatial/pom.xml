@@ -9,6 +9,12 @@
     <name>DataNucleus AccessPlatform JPA Geospatial Sample</name>
     <url>http://www.datanucleus.org</url>
 
+    <properties>
+        <encoding>UTF-8</encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <repositories>
         <repository>
             <id>DN_M2_Repo</id>
@@ -24,12 +30,12 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>[5.0.0-release, 5.9)</version>
+            <version>[5.2.0-release, 5.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>[5.0.0-release, 5.9)</version>
+            <version>[5.2.0-release, 5.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
@@ -40,12 +46,12 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[5.0.0-release, 5.9)</version>
+            <version>[5.2.0-release, 5.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-geospatial</artifactId>
-            <version>[5.0.0-release, )</version>
+            <version>[5.2.0-release, 5.9)</version>
         </dependency>
 
         <!-- Choose the target datastore -->
@@ -123,15 +129,11 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>5.0.2</version>
+                <version>5.2.1</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>MyTest</persistenceUnitName>

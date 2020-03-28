@@ -62,10 +62,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0.2</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
             </plugin>
             
             <plugin>
@@ -96,7 +92,7 @@
                             javax.persistence.criteria;version=2.1.0,
                             javax.persistence.metamodel;version=2.1.0,
                             javax.persistence.spi;version=2.1.0,
-                            org.datanucleus.util;version=4.0.0.release,
+                            org.datanucleus.util;version=5.2.0.release,
                             com.mysql.jdbc,
                             com.mysql.jdbc.exceptions
                         </Import-Package>
@@ -114,7 +110,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>4.0.0-release</version>
+                <version>5.2.1</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>PU</persistenceUnitName>
@@ -149,17 +145,17 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>[4.0.0-release, )</version>
+            <version>[5.2.0-release, )</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[4.0.0-release, )</version>
+            <version>[5.2.0-release, )</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>[4.0.0-release, )</version>
+            <version>[5.2.0-release, )</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
