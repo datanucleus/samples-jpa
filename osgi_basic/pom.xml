@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.datanucleus</groupId>
     <artifactId>datanucleus-samples-osgi-jpa</artifactId>
-    <version>4.0</version>
+    <version>6.0</version>
     <name>DataNucleus Samples : OSGi demo for JPA</name>
     <packaging>bundle</packaging>
 
@@ -61,7 +61,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
+                <version>3.8.0</version>
             </plugin>
             
             <plugin>
@@ -110,7 +110,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>5.2.1</version>
+                <version>6.0.0-m1</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>PU</persistenceUnitName>
@@ -145,17 +145,17 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>[5.2.0-release, )</version>
+            <version>[6.0.0-m1, 6.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[5.2.0-release, )</version>
+            <version>[6.0.0-m1, 6.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
-            <version>[5.2.0-release, )</version>
+            <version>[6.0.0-m1, 6.9)</version>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
