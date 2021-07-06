@@ -36,7 +36,7 @@
             <!--property name="javax.persistence.jdbc.url" value="excel:file:tutorial.xls"/-->
 
             <!-- ENABLE THESE FOR MONGODB -->
-            <!--property name="javax.persistence.jdbc.url" value="mongodb:/nucleus1"/-->
+            <!--property name="javax.persistence.jdbc.url" value="mongodb://localhost/nucleus1"/-->
 
             <!-- ENABLE THESE FOR HBASE -->
             <!--property name="javax.persistence.jdbc.url" value="hbase:"/-->
