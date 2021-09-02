@@ -20,6 +20,7 @@ public class Person
 
     @Basic
 //  @Convert(converter=SimpleAddressStringConverter.class)
+    @Column(name= "myAddress",length = 2048)
     SimpleAddress address;
 
     public Person(long id, String name)
